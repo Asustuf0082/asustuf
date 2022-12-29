@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car Animation</title>
+</head>
+<style>
+    body{
+        overflow: hidden;
+    animation: shakebody linear 6s infinite;
+
+    }
+    *{
+        box-sizing: border-box;
+        margin: 0%;
+        padding: 0%;
+    }
+    .sky{
+        background-image: url("background.jpg");
+        background-size: cover;
+        height: 80vh;
+        width: 100%;
+    }
+    .trees{
+        background-image: url("trees.png");
+        background-size: cover;
+       width: 100%;
+       height: 800px;
+       position: absolute;
+       top: -40%;
+        
+      
+    }
+    .track{
+        height: 400px;
+    width: 100%;
+    background-image: url(track.png);
+    background-repeat: repeat-x; 
+    position: absolute;
+    top: 400px;
+    animation: carMove linear 13s infinite;
+    }
+    .car{
+        background-image: url("car_body.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 100px;
+        width: 30%;
+        position: relative;
+        top: -240px;
+         left: 200px;
+         animation: shake linear .3s infinite;
+    }
+    .left-wheel img{
+        width: 69px;
+        position: absolute;
+    top: 41px;
+    left: 221px;
+    /* animation: wheelrotation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite; */
+    animation: wheelrotation linear .16s infinite;
+
+    }
+    .right-wheel img{
+        width: 72px;
+        position: absolute;
+        top: 36px;
+        left: 39px;
+        animation: wheelrotation linear .16s infinite;
+    }
+    @keyframes wheelrotation
+    {
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes carMove
+{
+    100%{
+        transform: translateX(-500vw);
+    }
+}
+
+@keyframes shake
+{
+    0%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
+@keyframes shakebody
+{
+    0%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(-50px);
+    }
+}
+</style>
+<body>
+    <div class="container">
+        <div class="sky"></div>
+        <div class="trees"></div>
+        <div class="track"></div>
+        <div class="car">
+            <div class="left-wheel">
+                <img src="car_wheel_left.png" alt="">
+            </div>
+            <div class="right-wheel">
+                <img src="car_wheel_right.png" alt="">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
